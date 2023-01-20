@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="POINT_OF_SALE" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=BRANDON-PC;Initial Catalog=POINT_OF_SALE;Integrated Security=True" SettingsObjectName="MANAGER_SALE.Properties.Settings" SettingsPropertyName="POINT_OF_SALEConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BUY" Member="BUY">
+    <Type Name="BUY">
+      <Column Name="DATE_OF_EXPIRATION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ID_BUY" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_PROVIDER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DATE_OF_BUY" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="QUANTITY_OF_PRODUCT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PURCHASE_COST" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="BUY_BUY_DETAIL" Member="BUY_DETAIL" ThisKey="ID_BUY" OtherKey="ID_BUY" Type="BUY_DETAIL" />
+      <Association Name="PROVIDER_BUY" Member="PROVIDER" ThisKey="ID_PROVIDER" OtherKey="ID_PROVIDER" Type="PROVIDER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BUY_DETAIL" Member="BUY_DETAIL">
+    <Type Name="BUY_DETAIL">
+      <Column Name="ID_BUY_DETAIL" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_BUY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_PRODUCT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="BUY_BUY_DETAIL" Member="BUY" ThisKey="ID_BUY" OtherKey="ID_BUY" Type="BUY" IsForeignKey="true" />
+      <Association Name="PRODUCT_BUY_DETAIL" Member="PRODUCT" ThisKey="ID_PRODUCT" OtherKey="ID_PRODUCT" Type="PRODUCT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CLIENT" Member="CLIENT">
+    <Type Name="CLIENT">
+      <Column Name="ID_CLIENT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NIT" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="PHONE_NUMBER" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="CLIENT_TRANSACTION_SALE" Member="TRANSACTION_SALE" ThisKey="ID_CLIENT" OtherKey="ID_CLIENT" Type="TRANSACTION_SALE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EMPLOYEES" Member="EMPLOYEES">
+    <Type Name="EMPLOYEES">
+      <Column Name="ID_EMPLOYEES" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[USER]" Member="USER" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="PASSWORD" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SUPERUSER" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="EMPLOYEES_TRANSACTION_SALE" Member="TRANSACTION_SALE" ThisKey="ID_EMPLOYEES" OtherKey="ID_EMPLOYEES" Type="TRANSACTION_SALE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PAYMENT_METHOD" Member="PAYMENT_METHOD">
+    <Type Name="PAYMENT_METHOD">
+      <Column Name="ID_PAYMENT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="METHOD" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="PAYMENT_METHOD_TRANSACTION_PAYMENT_DETAIL" Member="TRANSACTION_PAYMENT_DETAIL" ThisKey="ID_PAYMENT" OtherKey="ID_PAYMENT" Type="TRANSACTION_PAYMENT_DETAIL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRODUCT" Member="PRODUCT">
+    <Type Name="PRODUCT">
+      <Column Name="ID_PRODUCT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CODE" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="PRICE_COST" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="PRICE_SALE" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="STOCK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TRADEMARK" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="PRODUCT_BUY_DETAIL" Member="BUY_DETAIL" ThisKey="ID_PRODUCT" OtherKey="ID_PRODUCT" Type="BUY_DETAIL" />
+      <Association Name="PRODUCT_TRANSACTION_DETAIL" Member="TRANSACTION_DETAIL" ThisKey="ID_PRODUCT" OtherKey="ID_PRODUCT" Type="TRANSACTION_DETAIL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PROVIDER" Member="PROVIDER">
+    <Type Name="PROVIDER">
+      <Column Name="ID_PROVIDER" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="COMPANY" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="REPRESENTATIVE" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CONTACT_INFORMATION" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="PROVIDER_BUY" Member="BUY" ThisKey="ID_PROVIDER" OtherKey="ID_PROVIDER" Type="BUY" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRANSACTION_DETAIL" Member="TRANSACTION_DETAIL">
+    <Type Name="TRANSACTION_DETAIL">
+      <Column Name="ID_TRANSACTION_DETAIL" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_PRODUCT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_TRANSACTION" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QUANTITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PRICE" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="PRODUCT_TRANSACTION_DETAIL" Member="PRODUCT" ThisKey="ID_PRODUCT" OtherKey="ID_PRODUCT" Type="PRODUCT" IsForeignKey="true" />
+      <Association Name="TRANSACTION_SALE_TRANSACTION_DETAIL" Member="TRANSACTION_SALE" ThisKey="ID_TRANSACTION" OtherKey="ID_TRANSACTION" Type="TRANSACTION_SALE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRANSACTION_PAYMENT_DETAIL" Member="TRANSACTION_PAYMENT_DETAIL">
+    <Type Name="TRANSACTION_PAYMENT_DETAIL">
+      <Column Name="ID_TRANSACTION_PAYMENT_DETAIL" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_PAYMENT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_TRANSACTION" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRANSACTION_AMOUNT" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="PAYMENT_METHOD_TRANSACTION_PAYMENT_DETAIL" Member="PAYMENT_METHOD" ThisKey="ID_PAYMENT" OtherKey="ID_PAYMENT" Type="PAYMENT_METHOD" IsForeignKey="true" />
+      <Association Name="TRANSACTION_SALE_TRANSACTION_PAYMENT_DETAIL" Member="TRANSACTION_SALE" ThisKey="ID_TRANSACTION" OtherKey="ID_TRANSACTION" Type="TRANSACTION_SALE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRANSACTION_SALE" Member="TRANSACTION_SALE">
+    <Type Name="TRANSACTION_SALE">
+      <Column Name="ID_TRANSACTION" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_CLIENT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_EMPLOYEES" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DATE" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TIME" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="TOTAL" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="STATE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TRANSACTION_SALE_TRANSACTION_DETAIL" Member="TRANSACTION_DETAIL" ThisKey="ID_TRANSACTION" OtherKey="ID_TRANSACTION" Type="TRANSACTION_DETAIL" />
+      <Association Name="TRANSACTION_SALE_TRANSACTION_PAYMENT_DETAIL" Member="TRANSACTION_PAYMENT_DETAIL" ThisKey="ID_TRANSACTION" OtherKey="ID_TRANSACTION" Type="TRANSACTION_PAYMENT_DETAIL" />
+      <Association Name="CLIENT_TRANSACTION_SALE" Member="CLIENT" ThisKey="ID_CLIENT" OtherKey="ID_CLIENT" Type="CLIENT" IsForeignKey="true" />
+      <Association Name="EMPLOYEES_TRANSACTION_SALE" Member="EMPLOYEES" ThisKey="ID_EMPLOYEES" OtherKey="ID_EMPLOYEES" Type="EMPLOYEES" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
