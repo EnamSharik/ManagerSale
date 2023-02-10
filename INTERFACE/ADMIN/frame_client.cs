@@ -13,8 +13,11 @@ namespace MANAGER_SALE.INTERFACE.ADMIN {
     public partial class frame_client : DevExpress.XtraEditors.XtraForm {
         readonly DATA_BASE.Controller dbCtrl = new DATA_BASE.Controller();
         int ID;
-        public frame_client() {
+        bool closed;
+        public frame_client(bool closed) {
+            this.closed= closed;
             InitializeComponent();
+
         }
 
         private void frame_client_Load(object sender, EventArgs e) {
@@ -40,7 +43,13 @@ namespace MANAGER_SALE.INTERFACE.ADMIN {
             string name = this.entry_name.Text;
             string nit = this.entry_nit.Text;
             string tel = this.entry_phone.Text;
-            dbCtrl.AddClient(name, nit, tel);            
+            dbCtrl.AddClient(name, nit, tel);
+            if (this.closed) {
+                CONTROLLER.GlobalVARS.searchLookUpEdit_nitGlobal.Properties.DataSource = dbCtrl.EnableClientTable();
+                CONTROLLER.GlobalVARS.searchLookUpEdit_nitGlobal.Properties.ValueMember = "ID_CLIENT";
+                CONTROLLER.GlobalVARS.searchLookUpEdit_nitGlobal.Properties.DisplayMember = "NAME";
+                this.Dispose();
+            }
             DefaultState();
         }
 

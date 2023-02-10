@@ -47,7 +47,7 @@ namespace MANAGER_SALE.INTERFACE.ADMIN {
         }
 
         private void button_client_Click(object sender, EventArgs e) {
-            frame_client client = new frame_client();
+            frame_client client = new frame_client(false);
             client.MdiParent = this;
             client.Show();
         }

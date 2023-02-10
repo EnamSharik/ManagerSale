@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using MANAGER_SALE.DATA_BASE;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,11 +33,11 @@ namespace MANAGER_SALE.INTERFACE.SALE {
             this.searchLookUpEdit_metodosAlternativos.Properties.ValueMember = "ID_PAYMENT";
             this.searchLookUpEdit_metodosAlternativos.Properties.DisplayMember = "METHOD";
 
-            searchLookUpEdit_nit.Properties.DataSource = ControlDB.EnableClientTable();
-            searchLookUpEdit_nit.Properties.ValueMember= "ID_CLIENT";
-            searchLookUpEdit_nit.Properties.DisplayMember = "NAME";
+            CONTROLLER.GlobalVARS.searchLookUpEdit_nitGlobal.Properties.DataSource = ControlDB.EnableClientTable();
+            CONTROLLER.GlobalVARS.searchLookUpEdit_nitGlobal.Properties.ValueMember= "ID_CLIENT";
+            CONTROLLER.GlobalVARS.searchLookUpEdit_nitGlobal.Properties.DisplayMember = "NAME";
 
-            searchLookUpEdit_nit.Enabled = false;
+            CONTROLLER.GlobalVARS.searchLookUpEdit_nitGlobal.Enabled = false;
             this.button_generateCheck.Enabled = false;
 
         }
@@ -75,7 +76,7 @@ namespace MANAGER_SALE.INTERFACE.SALE {
         }
 
         private void button_cf_Click(object sender, EventArgs e) {
-            searchLookUpEdit_nit.EditValue = 4;
+            CONTROLLER.GlobalVARS.searchLookUpEdit_nitGlobal.EditValue = 1;
         }
 
         private void simpleButton4_Click(object sender, EventArgs e) {
@@ -83,7 +84,7 @@ namespace MANAGER_SALE.INTERFACE.SALE {
         }
 
         private void button_generateCheck_Click(object sender, EventArgs e) {
-            ControlDB.AddTransactionSale(Convert.ToInt32(searchLookUpEdit_nit.EditValue), CONTROLLER.GlobalVARS.id_employeed, Convert.ToDecimal(monto));
+            ControlDB.AddTransactionSale(Convert.ToInt32(CONTROLLER.GlobalVARS.searchLookUpEdit_nitGlobal.EditValue), CONTROLLER.GlobalVARS.id_employeed, Convert.ToDecimal(monto));
             int trans = ControlDB.getLastID_TRANSACTIONSALE();
             foreach (var n in CONTROLLER.GlobalVARS.gestorProductoEnlistado.listadoDeProductos) {
                 ControlDB.AddTransactionDetail(n.ID_product, trans, n.quantity, Convert.ToDecimal(n.quantity * ControlDB.getPriceByID(n.ID_product)));
@@ -102,8 +103,15 @@ namespace MANAGER_SALE.INTERFACE.SALE {
 
         private void frame_datoClient_VisibleChanged(object sender, EventArgs e) {
             if (CONTROLLER.GlobalVARS.pagoRealizado) {
-                this.searchLookUpEdit_nit.Enabled = true;
+                CONTROLLER.GlobalVARS.searchLookUpEdit_nitGlobal.Enabled = true;
             }
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e) {
+            INTERFACE.ADMIN.frame_client k = new ADMIN.frame_client(true);
+            k.Show();
+            
+
         }
     }
 }

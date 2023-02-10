@@ -13,8 +13,9 @@ namespace MANAGER_SALE.CONTROLLER {
         //ETERNAL VARS
         public static int id_employeed { get; set; } = 0;
         public static string ConexionDB { get; set; } = "Data Source=BRANDON-PC;Initial Catalog=POINT_OF_SALE;Integrated Security=True";
+        public static DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit_nitGlobal { get; set; } 
 
-        
+
         //FINITE VARS
         public static int id_client { get; set; } = 0;
         public static CONTROLLER.ProductoToList gestorProductoEnlistado { get; set; } = new CONTROLLER.ProductoToList();

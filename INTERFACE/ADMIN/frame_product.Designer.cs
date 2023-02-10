@@ -24,7 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frame_product));
-            DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator6 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
+            DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator1 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.entry_name = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -70,23 +70,23 @@
             this.labelControl4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(733, 391);
-            this.labelControl4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.labelControl4.Location = new System.Drawing.Point(754, 332);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(88, 24);
+            this.labelControl4.Size = new System.Drawing.Size(80, 22);
             this.labelControl4.TabIndex = 40;
             this.labelControl4.Text = "ESTADO:";
             // 
             // entry_name
             // 
             this.entry_name.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.entry_name.Location = new System.Drawing.Point(957, 123);
-            this.entry_name.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.entry_name.Location = new System.Drawing.Point(903, 105);
+            this.entry_name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.entry_name.Name = "entry_name";
-            this.entry_name.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.entry_name.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.entry_name.Properties.Appearance.Options.UseFont = true;
             this.entry_name.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.entry_name.Size = new System.Drawing.Size(301, 30);
+            this.entry_name.Size = new System.Drawing.Size(191, 28);
             this.entry_name.TabIndex = 35;
             this.entry_name.EditValueChanged += new System.EventHandler(this.entry_name_EditValueChanged);
             // 
@@ -95,10 +95,10 @@
             this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(733, 126);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.labelControl2.Location = new System.Drawing.Point(754, 108);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(96, 24);
+            this.labelControl2.Size = new System.Drawing.Size(87, 22);
             this.labelControl2.TabIndex = 33;
             this.labelControl2.Text = "NOMBRE:";
             // 
@@ -108,10 +108,10 @@
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl1.Location = new System.Drawing.Point(904, 24);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.labelControl1.Location = new System.Drawing.Point(863, 21);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(157, 35);
+            this.labelControl1.Size = new System.Drawing.Size(143, 32);
             this.labelControl1.TabIndex = 32;
             this.labelControl1.Text = "PRODUCTO";
             // 
@@ -120,12 +120,12 @@
             this.gridControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.gridControl.Location = new System.Drawing.Point(14, 23);
+            this.gridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControl.Location = new System.Drawing.Point(12, 17);
             this.gridControl.MainView = this.gridView;
-            this.gridControl.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.gridControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(693, 699);
+            this.gridControl.Size = new System.Drawing.Size(735, 525);
             this.gridControl.TabIndex = 31;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -133,7 +133,7 @@
             // 
             // gridView
             // 
-            this.gridView.DetailHeight = 525;
+            this.gridView.DetailHeight = 284;
             this.gridView.GridControl = this.gridControl;
             this.gridView.Name = "gridView";
             // 
@@ -142,23 +142,23 @@
             this.labelControl5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(733, 88);
-            this.labelControl5.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.labelControl5.Location = new System.Drawing.Point(754, 75);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(74, 24);
+            this.labelControl5.Size = new System.Drawing.Size(65, 22);
             this.labelControl5.TabIndex = 42;
             this.labelControl5.Text = "MARCA";
             // 
             // entry_description
             // 
             this.entry_description.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.entry_description.Location = new System.Drawing.Point(957, 161);
-            this.entry_description.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.entry_description.Location = new System.Drawing.Point(903, 137);
+            this.entry_description.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.entry_description.Name = "entry_description";
-            this.entry_description.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.entry_description.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.entry_description.Properties.Appearance.Options.UseFont = true;
             this.entry_description.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.entry_description.Size = new System.Drawing.Size(301, 30);
+            this.entry_description.Size = new System.Drawing.Size(191, 28);
             this.entry_description.TabIndex = 46;
             // 
             // labelControl6
@@ -166,24 +166,24 @@
             this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(733, 164);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.labelControl6.Location = new System.Drawing.Point(754, 140);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(151, 24);
+            this.labelControl6.Size = new System.Drawing.Size(138, 22);
             this.labelControl6.TabIndex = 45;
             this.labelControl6.Text = "DESCRIPCION:";
             // 
             // entry_cost
             // 
             this.entry_cost.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.entry_cost.Location = new System.Drawing.Point(957, 237);
-            this.entry_cost.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.entry_cost.Location = new System.Drawing.Point(903, 201);
+            this.entry_cost.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.entry_cost.Name = "entry_cost";
-            this.entry_cost.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.entry_cost.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.entry_cost.Properties.Appearance.Options.UseFont = true;
             this.entry_cost.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.entry_cost.Properties.ReadOnly = true;
-            this.entry_cost.Size = new System.Drawing.Size(301, 30);
+            this.entry_cost.Size = new System.Drawing.Size(191, 28);
             this.entry_cost.TabIndex = 48;
             // 
             // labelControl7
@@ -191,24 +191,24 @@
             this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(733, 240);
-            this.labelControl7.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.labelControl7.Location = new System.Drawing.Point(754, 204);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(75, 24);
+            this.labelControl7.Size = new System.Drawing.Size(69, 22);
             this.labelControl7.TabIndex = 47;
             this.labelControl7.Text = "COSTO:";
             // 
             // entry_quantity
             // 
             this.entry_quantity.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.entry_quantity.Location = new System.Drawing.Point(957, 351);
-            this.entry_quantity.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.entry_quantity.Location = new System.Drawing.Point(904, 297);
+            this.entry_quantity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.entry_quantity.Name = "entry_quantity";
-            this.entry_quantity.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.entry_quantity.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.entry_quantity.Properties.Appearance.Options.UseFont = true;
             this.entry_quantity.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.entry_quantity.Properties.ReadOnly = true;
-            this.entry_quantity.Size = new System.Drawing.Size(301, 30);
+            this.entry_quantity.Size = new System.Drawing.Size(191, 28);
             this.entry_quantity.TabIndex = 50;
             // 
             // labelControl8
@@ -216,10 +216,10 @@
             this.labelControl8.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(733, 354);
-            this.labelControl8.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.labelControl8.Location = new System.Drawing.Point(754, 300);
+            this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(115, 24);
+            this.labelControl8.Size = new System.Drawing.Size(105, 22);
             this.labelControl8.TabIndex = 49;
             this.labelControl8.Text = "CANTIDAD:";
             // 
@@ -230,10 +230,10 @@
             this.button_add.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
             this.button_add.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("button_add.ImageOptions.SvgImage")));
             this.button_add.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            this.button_add.Location = new System.Drawing.Point(718, 600);
-            this.button_add.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.button_add.Location = new System.Drawing.Point(754, 477);
+            this.button_add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(148, 120);
+            this.button_add.Size = new System.Drawing.Size(81, 65);
             this.button_add.TabIndex = 51;
             this.button_add.Text = "AGREGAR";
             this.button_add.Click += new System.EventHandler(this.button_add_Click_1);
@@ -245,10 +245,10 @@
             this.button_modify.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
             this.button_modify.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("button_modify.ImageOptions.SvgImage")));
             this.button_modify.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            this.button_modify.Location = new System.Drawing.Point(913, 600);
-            this.button_modify.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.button_modify.Location = new System.Drawing.Point(887, 477);
+            this.button_modify.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_modify.Name = "button_modify";
-            this.button_modify.Size = new System.Drawing.Size(148, 120);
+            this.button_modify.Size = new System.Drawing.Size(81, 65);
             this.button_modify.TabIndex = 52;
             this.button_modify.Text = "MODIFICAR";
             this.button_modify.Click += new System.EventHandler(this.button_modify_Click);
@@ -260,10 +260,10 @@
             this.button_delete.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
             this.button_delete.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("button_delete.ImageOptions.SvgImage")));
             this.button_delete.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            this.button_delete.Location = new System.Drawing.Point(1108, 600);
-            this.button_delete.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.button_delete.Location = new System.Drawing.Point(1014, 477);
+            this.button_delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(148, 120);
+            this.button_delete.Size = new System.Drawing.Size(81, 65);
             this.button_delete.TabIndex = 53;
             this.button_delete.Text = "DELETE";
             this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
@@ -271,12 +271,12 @@
             // barCodeControl
             // 
             this.barCodeControl.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.barCodeControl.Location = new System.Drawing.Point(717, 460);
-            this.barCodeControl.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.barCodeControl.Location = new System.Drawing.Point(754, 402);
+            this.barCodeControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.barCodeControl.Name = "barCodeControl";
-            this.barCodeControl.Padding = new System.Windows.Forms.Padding(16, 3, 16, 0);
-            this.barCodeControl.Size = new System.Drawing.Size(539, 131);
-            this.barCodeControl.Symbology = code128Generator6;
+            this.barCodeControl.Padding = new System.Windows.Forms.Padding(9, 2, 9, 0);
+            this.barCodeControl.Size = new System.Drawing.Size(340, 71);
+            this.barCodeControl.Symbology = code128Generator1;
             this.barCodeControl.TabIndex = 54;
             // 
             // labelControl3
@@ -284,24 +284,24 @@
             this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(733, 202);
-            this.labelControl3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.labelControl3.Location = new System.Drawing.Point(754, 172);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(90, 24);
+            this.labelControl3.Size = new System.Drawing.Size(83, 22);
             this.labelControl3.TabIndex = 34;
             this.labelControl3.Text = "CODIGO:";
             // 
             // entry_code
             // 
             this.entry_code.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.entry_code.Location = new System.Drawing.Point(957, 199);
-            this.entry_code.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.entry_code.Location = new System.Drawing.Point(903, 169);
+            this.entry_code.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.entry_code.Name = "entry_code";
-            this.entry_code.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.entry_code.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.entry_code.Properties.Appearance.Options.UseFont = true;
             this.entry_code.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.entry_code.Properties.ReadOnly = true;
-            this.entry_code.Size = new System.Drawing.Size(301, 30);
+            this.entry_code.Size = new System.Drawing.Size(191, 28);
             this.entry_code.TabIndex = 44;
             this.entry_code.EditValueChanged += new System.EventHandler(this.entry_code_EditValueChanged);
             // 
@@ -310,24 +310,24 @@
             this.labelControl9.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(733, 278);
-            this.labelControl9.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.labelControl9.Location = new System.Drawing.Point(754, 236);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(158, 24);
+            this.labelControl9.Size = new System.Drawing.Size(141, 22);
             this.labelControl9.TabIndex = 55;
             this.labelControl9.Text = "GANANCIA (%)";
             // 
             // entry_salePrice
             // 
             this.entry_salePrice.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.entry_salePrice.Location = new System.Drawing.Point(957, 313);
-            this.entry_salePrice.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.entry_salePrice.Location = new System.Drawing.Point(904, 265);
+            this.entry_salePrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.entry_salePrice.Name = "entry_salePrice";
-            this.entry_salePrice.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.entry_salePrice.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.entry_salePrice.Properties.Appearance.Options.UseFont = true;
             this.entry_salePrice.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.entry_salePrice.Properties.ReadOnly = true;
-            this.entry_salePrice.Size = new System.Drawing.Size(299, 30);
+            this.entry_salePrice.Size = new System.Drawing.Size(190, 28);
             this.entry_salePrice.TabIndex = 58;
             // 
             // labelControl10
@@ -335,65 +335,71 @@
             this.labelControl10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(733, 316);
-            this.labelControl10.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.labelControl10.Location = new System.Drawing.Point(754, 268);
+            this.labelControl10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(158, 24);
+            this.labelControl10.Size = new System.Drawing.Size(143, 22);
             this.labelControl10.TabIndex = 57;
             this.labelControl10.Text = "PRECIO VENTA:";
             // 
             // Check_ShowDisable
             // 
             this.Check_ShowDisable.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Check_ShowDisable.Location = new System.Drawing.Point(956, 424);
+            this.Check_ShowDisable.Location = new System.Drawing.Point(782, 371);
+            this.Check_ShowDisable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Check_ShowDisable.Name = "Check_ShowDisable";
+            this.Check_ShowDisable.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Check_ShowDisable.Properties.Appearance.Options.UseFont = true;
             this.Check_ShowDisable.Properties.Caption = "MOSTRAR DESHABILITADOS";
-            this.Check_ShowDisable.Size = new System.Drawing.Size(300, 28);
+            this.Check_ShowDisable.Size = new System.Drawing.Size(275, 26);
             this.Check_ShowDisable.TabIndex = 59;
             this.Check_ShowDisable.CheckedChanged += new System.EventHandler(this.Check_ShowDisable_CheckedChanged);
             // 
             // entry_state
             // 
             this.entry_state.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.entry_state.Location = new System.Drawing.Point(957, 388);
+            this.entry_state.Location = new System.Drawing.Point(903, 329);
+            this.entry_state.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.entry_state.Name = "entry_state";
+            this.entry_state.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.entry_state.Properties.Appearance.Options.UseFont = true;
             this.entry_state.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.entry_state.Size = new System.Drawing.Size(301, 30);
+            this.entry_state.Size = new System.Drawing.Size(191, 28);
             this.entry_state.TabIndex = 60;
             // 
             // entry_profitPercentage
             // 
             this.entry_profitPercentage.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.entry_profitPercentage.Location = new System.Drawing.Point(957, 275);
-            this.entry_profitPercentage.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.entry_profitPercentage.Location = new System.Drawing.Point(903, 233);
+            this.entry_profitPercentage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.entry_profitPercentage.Name = "entry_profitPercentage";
-            this.entry_profitPercentage.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.entry_profitPercentage.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.entry_profitPercentage.Properties.Appearance.Options.UseFont = true;
             this.entry_profitPercentage.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.entry_profitPercentage.Size = new System.Drawing.Size(301, 30);
+            this.entry_profitPercentage.Size = new System.Drawing.Size(191, 28);
             this.entry_profitPercentage.TabIndex = 61;
             this.entry_profitPercentage.EditValueChanged += new System.EventHandler(this.entry_profitPercentage_EditValueChanged);
             // 
             // entry_tradeMark
             // 
             this.entry_tradeMark.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.entry_tradeMark.Location = new System.Drawing.Point(957, 85);
-            this.entry_tradeMark.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.entry_tradeMark.Location = new System.Drawing.Point(903, 72);
+            this.entry_tradeMark.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.entry_tradeMark.Name = "entry_tradeMark";
-            this.entry_tradeMark.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.entry_tradeMark.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.78182F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.entry_tradeMark.Properties.Appearance.Options.UseFont = true;
             this.entry_tradeMark.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.entry_tradeMark.Size = new System.Drawing.Size(301, 30);
+            this.entry_tradeMark.Size = new System.Drawing.Size(191, 28);
             this.entry_tradeMark.TabIndex = 62;
             // 
             // frame_product
             // 
             this.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.Appearance.Options.UseBackColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1272, 735);
+            this.ClientSize = new System.Drawing.Size(1105, 553);
             this.Controls.Add(this.entry_tradeMark);
             this.Controls.Add(this.entry_profitPercentage);
             this.Controls.Add(this.entry_state);
@@ -419,7 +425,7 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.gridControl);
-            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frame_product";
             this.Text = "PRODUCTO";
             this.Load += new System.EventHandler(this.frame_product_Load);

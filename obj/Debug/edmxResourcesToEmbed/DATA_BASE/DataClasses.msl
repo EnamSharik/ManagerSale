@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="POINT_OF_SALEModelStoreContainer" CdmEntityContainer="POINT_OF_SALEEntities">
+    <EntitySetMapping Name="CLIENT">
+      <EntityTypeMapping TypeName="POINT_OF_SALEModel.CLIENT">
+        <MappingFragment StoreEntitySet="CLIENT">
+          <ScalarProperty Name="ID_CLIENT" ColumnName="ID_CLIENT" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="NIT" ColumnName="NIT" />
+          <ScalarProperty Name="PHONE_NUMBER" ColumnName="PHONE_NUMBER" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLOYEES">
+      <EntityTypeMapping TypeName="POINT_OF_SALEModel.EMPLOYEES">
+        <MappingFragment StoreEntitySet="EMPLOYEES">
+          <ScalarProperty Name="ID_EMPLOYEES" ColumnName="ID_EMPLOYEES" />
+          <ScalarProperty Name="USER" ColumnName="USER" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAYMENT_METHOD">
+      <EntityTypeMapping TypeName="POINT_OF_SALEModel.PAYMENT_METHOD">
+        <MappingFragment StoreEntitySet="PAYMENT_METHOD">
+          <ScalarProperty Name="ID_PAYMENT" ColumnName="ID_PAYMENT" />
+          <ScalarProperty Name="METHOD" ColumnName="METHOD" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCT">
+      <EntityTypeMapping TypeName="POINT_OF_SALEModel.PRODUCT">
+        <MappingFragment StoreEntitySet="PRODUCT">
+          <ScalarProperty Name="ID_PRODUCT" ColumnName="ID_PRODUCT" />
+          <ScalarProperty Name="ID_PROVIDER" ColumnName="ID_PROVIDER" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="PRICE_COST" ColumnName="PRICE_COST" />
+          <ScalarProperty Name="PRICE_SALE" ColumnName="PRICE_SALE" />
+          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROVIDER">
+      <EntityTypeMapping TypeName="POINT_OF_SALEModel.PROVIDER">
+        <MappingFragment StoreEntitySet="PROVIDER">
+          <ScalarProperty Name="ID_PROVIDER" ColumnName="ID_PROVIDER" />
+          <ScalarProperty Name="COMPANY" ColumnName="COMPANY" />
+          <ScalarProperty Name="REPRESENTATIVE" ColumnName="REPRESENTATIVE" />
+          <ScalarProperty Name="CONTACT_INFORMATION" ColumnName="CONTACT_INFORMATION" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANSACTION_DETAIL">
+      <EntityTypeMapping TypeName="POINT_OF_SALEModel.TRANSACTION_DETAIL">
+        <MappingFragment StoreEntitySet="TRANSACTION_DETAIL">
+          <ScalarProperty Name="ID_TRANSACTION_DETAIL" ColumnName="ID_TRANSACTION_DETAIL" />
+          <ScalarProperty Name="ID_PRODUCT" ColumnName="ID_PRODUCT" />
+          <ScalarProperty Name="ID_TRANSACTION" ColumnName="ID_TRANSACTION" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANSACTION_PAYMENT_DETAIL">
+      <EntityTypeMapping TypeName="POINT_OF_SALEModel.TRANSACTION_PAYMENT_DETAIL">
+        <MappingFragment StoreEntitySet="TRANSACTION_PAYMENT_DETAIL">
+          <ScalarProperty Name="ID_TRANSACTION_PAYMENT_DETAIL" ColumnName="ID_TRANSACTION_PAYMENT_DETAIL" />
+          <ScalarProperty Name="ID_PAYMENT" ColumnName="ID_PAYMENT" />
+          <ScalarProperty Name="ID_TRANSACTION" ColumnName="ID_TRANSACTION" />
+          <ScalarProperty Name="TRANSACTION_AMOUNT" ColumnName="TRANSACTION_AMOUNT" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANSACTION_SALE">
+      <EntityTypeMapping TypeName="POINT_OF_SALEModel.TRANSACTION_SALE">
+        <MappingFragment StoreEntitySet="TRANSACTION_SALE">
+          <ScalarProperty Name="ID_TRANSACTION" ColumnName="ID_TRANSACTION" />
+          <ScalarProperty Name="ID_CLIENT" ColumnName="ID_CLIENT" />
+          <ScalarProperty Name="ID_EMPLOYEES" ColumnName="ID_EMPLOYEES" />
+          <ScalarProperty Name="DATE_YEAR" ColumnName="DATE_YEAR" />
+          <ScalarProperty Name="DATE_MONTH" ColumnName="DATE_MONTH" />
+          <ScalarProperty Name="DATE_DAY" ColumnName="DATE_DAY" />
+          <ScalarProperty Name="TIME_HOUR" ColumnName="TIME_HOUR" />
+          <ScalarProperty Name="TIME_MINUTE" ColumnName="TIME_MINUTE" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

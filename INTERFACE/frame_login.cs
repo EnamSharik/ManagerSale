@@ -57,7 +57,7 @@ namespace MANAGER_SALE.INTERFACE {
                     this.Visible = false;
                     //adm.Show();
                     this.entry_login_password.Text = string.Empty;
-                    INTERFACE.ADMIN.MAINFRAME k = new MAINFRAME();
+                    frameMain_admin k = new frameMain_admin(this);
                     k.Show();
                 } else {
 

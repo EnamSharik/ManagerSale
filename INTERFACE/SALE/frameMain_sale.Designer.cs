@@ -42,26 +42,25 @@
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.label_status});
-            this.statusStrip.Location = new System.Drawing.Point(0, 606);
+            this.statusStrip.Location = new System.Drawing.Point(0, 490);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip.Size = new System.Drawing.Size(1142, 26);
+            this.statusStrip.Size = new System.Drawing.Size(856, 24);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
             // label_status
             // 
             this.label_status.Name = "label_status";
-            this.label_status.Size = new System.Drawing.Size(54, 20);
+            this.label_status.Size = new System.Drawing.Size(50, 19);
             this.label_status.Text = "Estado";
             // 
             // toolStrip
             // 
             this.toolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip.MinimumSize = new System.Drawing.Size(0, 105);
+            this.toolStrip.MinimumSize = new System.Drawing.Size(0, 85);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(1142, 105);
+            this.toolStrip.Size = new System.Drawing.Size(856, 85);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "ToolStrip";
             // 
@@ -73,9 +72,10 @@
             this.button_product.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
             this.button_product.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("button_product.ImageOptions.SvgImage")));
             this.button_product.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            this.button_product.Location = new System.Drawing.Point(12, 12);
+            this.button_product.Location = new System.Drawing.Point(9, 10);
+            this.button_product.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_product.Name = "button_product";
-            this.button_product.Size = new System.Drawing.Size(94, 80);
+            this.button_product.Size = new System.Drawing.Size(82, 65);
             this.button_product.TabIndex = 10;
             this.button_product.Text = "PRODUCTOS";
             this.button_product.Click += new System.EventHandler(this.button_product_Click);
@@ -88,9 +88,10 @@
             this.button_client.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
             this.button_client.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("button_client.ImageOptions.SvgImage")));
             this.button_client.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            this.button_client.Location = new System.Drawing.Point(112, 12);
+            this.button_client.Location = new System.Drawing.Point(95, 10);
+            this.button_client.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_client.Name = "button_client";
-            this.button_client.Size = new System.Drawing.Size(94, 80);
+            this.button_client.Size = new System.Drawing.Size(74, 65);
             this.button_client.TabIndex = 11;
             this.button_client.Text = "DATOS DE\r\nCLIENTE";
             this.button_client.Click += new System.EventHandler(this.button_client_Click);
@@ -103,9 +104,10 @@
             this.button_check.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
             this.button_check.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("button_check.ImageOptions.SvgImage")));
             this.button_check.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            this.button_check.Location = new System.Drawing.Point(212, 12);
+            this.button_check.Location = new System.Drawing.Point(173, 10);
+            this.button_check.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_check.Name = "button_check";
-            this.button_check.Size = new System.Drawing.Size(94, 80);
+            this.button_check.Size = new System.Drawing.Size(73, 65);
             this.button_check.TabIndex = 12;
             this.button_check.Text = "GENERAR\r\nFACTURA";
             // 
@@ -118,28 +120,31 @@
             this.button_closeSesion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("button_closeSesion.ImageOptions.Image")));
             this.button_closeSesion.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
             this.button_closeSesion.ImageOptions.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.Full;
-            this.button_closeSesion.Location = new System.Drawing.Point(1036, 12);
+            this.button_closeSesion.Location = new System.Drawing.Point(777, 10);
+            this.button_closeSesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_closeSesion.Name = "button_closeSesion";
-            this.button_closeSesion.Size = new System.Drawing.Size(94, 80);
+            this.button_closeSesion.Size = new System.Drawing.Size(70, 65);
             this.button_closeSesion.TabIndex = 18;
             this.button_closeSesion.Text = "CERRAR \r\nSESIÓN";
             this.button_closeSesion.Click += new System.EventHandler(this.button_closeSesion_Click);
             // 
             // text_user
             // 
+            this.text_user.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.text_user.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_user.Appearance.Options.UseFont = true;
-            this.text_user.Location = new System.Drawing.Point(877, 12);
+            this.text_user.Location = new System.Drawing.Point(350, 10);
+            this.text_user.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.text_user.Name = "text_user";
-            this.text_user.Size = new System.Drawing.Size(153, 24);
+            this.text_user.Size = new System.Drawing.Size(140, 22);
             this.text_user.TabIndex = 20;
             this.text_user.Text = "BRANDON LOPEZ";
             // 
             // frameMain_sale
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1142, 632);
+            this.ClientSize = new System.Drawing.Size(856, 514);
             this.Controls.Add(this.text_user);
             this.Controls.Add(this.button_closeSesion);
             this.Controls.Add(this.button_check);
@@ -148,7 +153,6 @@
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frameMain_sale";
             this.Text = "SALE";
             this.statusStrip.ResumeLayout(false);

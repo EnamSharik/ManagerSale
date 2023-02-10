@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="POINT_OF_SALEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CLIENT">
+    <Key>
+      <PropertyRef Name="ID_CLIENT" />
+    </Key>
+    <Property Name="ID_CLIENT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NIT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PHONE_NUMBER" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STATE" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="TRANSACTION_SALE" Relationship="Self.FK__TRANSACTI__ID_CL__35BCFE0A" FromRole="CLIENT" ToRole="TRANSACTION_SALE" />
+  </EntityType>
+  <EntityType Name="EMPLOYEES">
+    <Key>
+      <PropertyRef Name="ID_EMPLOYEES" />
+    </Key>
+    <Property Name="ID_EMPLOYEES" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STATE" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="TRANSACTION_SALE" Relationship="Self.FK__TRANSACTI__ID_EM__37A5467C" FromRole="EMPLOYEES" ToRole="TRANSACTION_SALE" />
+  </EntityType>
+  <EntityType Name="PAYMENT_METHOD">
+    <Key>
+      <PropertyRef Name="ID_PAYMENT" />
+    </Key>
+    <Property Name="ID_PAYMENT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="METHOD" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STATE" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="TRANSACTION_PAYMENT_DETAIL" Relationship="Self.FK__TRANSACTI__ID_PA__34C8D9D1" FromRole="PAYMENT_METHOD" ToRole="TRANSACTION_PAYMENT_DETAIL" />
+  </EntityType>
+  <EntityType Name="PRODUCT">
+    <Key>
+      <PropertyRef Name="ID_PRODUCT" />
+    </Key>
+    <Property Name="ID_PRODUCT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_PROVIDER" Type="Int32" Nullable="false" />
+    <Property Name="CODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PRICE_COST" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="PRICE_SALE" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="STOCK" Type="Int32" Nullable="false" />
+    <Property Name="STATE" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="PROVIDER" Relationship="Self.FK__PRODUCT__ID_PROV__36B12243" FromRole="PRODUCT" ToRole="PROVIDER" />
+    <NavigationProperty Name="TRANSACTION_DETAIL" Relationship="Self.FK__TRANSACTI__ID_PR__31EC6D26" FromRole="PRODUCT" ToRole="TRANSACTION_DETAIL" />
+  </EntityType>
+  <EntityType Name="PROVIDER">
+    <Key>
+      <PropertyRef Name="ID_PROVIDER" />
+    </Key>
+    <Property Name="ID_PROVIDER" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COMPANY" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="REPRESENTATIVE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CONTACT_INFORMATION" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="STATE" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="PRODUCT" Relationship="Self.FK__PRODUCT__ID_PROV__36B12243" FromRole="PROVIDER" ToRole="PRODUCT" />
+  </EntityType>
+  <EntityType Name="TRANSACTION_DETAIL">
+    <Key>
+      <PropertyRef Name="ID_TRANSACTION_DETAIL" />
+    </Key>
+    <Property Name="ID_TRANSACTION_DETAIL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_PRODUCT" Type="Int32" Nullable="false" />
+    <Property Name="ID_TRANSACTION" Type="Int32" Nullable="false" />
+    <Property Name="QUANTITY" Type="Int32" Nullable="false" />
+    <Property Name="PRICE" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="STATE" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="PRODUCT" Relationship="Self.FK__TRANSACTI__ID_PR__31EC6D26" FromRole="TRANSACTION_DETAIL" ToRole="PRODUCT" />
+    <NavigationProperty Name="TRANSACTION_SALE" Relationship="Self.FK__TRANSACTI__ID_TR__32E0915F" FromRole="TRANSACTION_DETAIL" ToRole="TRANSACTION_SALE" />
+  </EntityType>
+  <EntityType Name="TRANSACTION_PAYMENT_DETAIL">
+    <Key>
+      <PropertyRef Name="ID_TRANSACTION_PAYMENT_DETAIL" />
+    </Key>
+    <Property Name="ID_TRANSACTION_PAYMENT_DETAIL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_PAYMENT" Type="Int32" Nullable="false" />
+    <Property Name="ID_TRANSACTION" Type="Int32" Nullable="false" />
+    <Property Name="TRANSACTION_AMOUNT" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="STATE" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="PAYMENT_METHOD" Relationship="Self.FK__TRANSACTI__ID_PA__34C8D9D1" FromRole="TRANSACTION_PAYMENT_DETAIL" ToRole="PAYMENT_METHOD" />
+    <NavigationProperty Name="TRANSACTION_SALE" Relationship="Self.FK__TRANSACTI__ID_TR__33D4B598" FromRole="TRANSACTION_PAYMENT_DETAIL" ToRole="TRANSACTION_SALE" />
+  </EntityType>
+  <EntityType Name="TRANSACTION_SALE">
+    <Key>
+      <PropertyRef Name="ID_TRANSACTION" />
+    </Key>
+    <Property Name="ID_TRANSACTION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_CLIENT" Type="Int32" Nullable="false" />
+    <Property Name="ID_EMPLOYEES" Type="Int32" Nullable="false" />
+    <Property Name="DATE_YEAR" Type="Int32" Nullable="false" />
+    <Property Name="DATE_MONTH" Type="Int32" Nullable="false" />
+    <Property Name="DATE_DAY" Type="Int32" Nullable="false" />
+    <Property Name="TIME_HOUR" Type="Int32" Nullable="false" />
+    <Property Name="TIME_MINUTE" Type="Int32" Nullable="false" />
+    <Property Name="TOTAL" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="STATE" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="CLIENT" Relationship="Self.FK__TRANSACTI__ID_CL__35BCFE0A" FromRole="TRANSACTION_SALE" ToRole="CLIENT" />
+    <NavigationProperty Name="EMPLOYEES" Relationship="Self.FK__TRANSACTI__ID_EM__37A5467C" FromRole="TRANSACTION_SALE" ToRole="EMPLOYEES" />
+    <NavigationProperty Name="TRANSACTION_DETAIL" Relationship="Self.FK__TRANSACTI__ID_TR__32E0915F" FromRole="TRANSACTION_SALE" ToRole="TRANSACTION_DETAIL" />
+    <NavigationProperty Name="TRANSACTION_PAYMENT_DETAIL" Relationship="Self.FK__TRANSACTI__ID_TR__33D4B598" FromRole="TRANSACTION_SALE" ToRole="TRANSACTION_PAYMENT_DETAIL" />
+  </EntityType>
+  <Association Name="FK__TRANSACTI__ID_CL__35BCFE0A">
+    <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="1" />
+    <End Role="TRANSACTION_SALE" Type="Self.TRANSACTION_SALE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENT">
+        <PropertyRef Name="ID_CLIENT" />
+      </Principal>
+      <Dependent Role="TRANSACTION_SALE">
+        <PropertyRef Name="ID_CLIENT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TRANSACTI__ID_EM__37A5467C">
+    <End Role="EMPLOYEES" Type="Self.EMPLOYEES" Multiplicity="1" />
+    <End Role="TRANSACTION_SALE" Type="Self.TRANSACTION_SALE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEES">
+        <PropertyRef Name="ID_EMPLOYEES" />
+      </Principal>
+      <Dependent Role="TRANSACTION_SALE">
+        <PropertyRef Name="ID_EMPLOYEES" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TRANSACTI__ID_PA__34C8D9D1">
+    <End Role="PAYMENT_METHOD" Type="Self.PAYMENT_METHOD" Multiplicity="1" />
+    <End Role="TRANSACTION_PAYMENT_DETAIL" Type="Self.TRANSACTION_PAYMENT_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PAYMENT_METHOD">
+        <PropertyRef Name="ID_PAYMENT" />
+      </Principal>
+      <Dependent Role="TRANSACTION_PAYMENT_DETAIL">
+        <PropertyRef Name="ID_PAYMENT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PRODUCT__ID_PROV__36B12243">
+    <End Role="PROVIDER" Type="Self.PROVIDER" Multiplicity="1" />
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROVIDER">
+        <PropertyRef Name="ID_PROVIDER" />
+      </Principal>
+      <Dependent Role="PRODUCT">
+        <PropertyRef Name="ID_PROVIDER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TRANSACTI__ID_PR__31EC6D26">
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+    <End Role="TRANSACTION_DETAIL" Type="Self.TRANSACTION_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="ID_PRODUCT" />
+      </Principal>
+      <Dependent Role="TRANSACTION_DETAIL">
+        <PropertyRef Name="ID_PRODUCT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TRANSACTI__ID_TR__32E0915F">
+    <End Role="TRANSACTION_SALE" Type="Self.TRANSACTION_SALE" Multiplicity="1" />
+    <End Role="TRANSACTION_DETAIL" Type="Self.TRANSACTION_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRANSACTION_SALE">
+        <PropertyRef Name="ID_TRANSACTION" />
+      </Principal>
+      <Dependent Role="TRANSACTION_DETAIL">
+        <PropertyRef Name="ID_TRANSACTION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TRANSACTI__ID_TR__33D4B598">
+    <End Role="TRANSACTION_SALE" Type="Self.TRANSACTION_SALE" Multiplicity="1" />
+    <End Role="TRANSACTION_PAYMENT_DETAIL" Type="Self.TRANSACTION_PAYMENT_DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRANSACTION_SALE">
+        <PropertyRef Name="ID_TRANSACTION" />
+      </Principal>
+      <Dependent Role="TRANSACTION_PAYMENT_DETAIL">
+        <PropertyRef Name="ID_TRANSACTION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="POINT_OF_SALEEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CLIENT" EntityType="Self.CLIENT" />
+    <EntitySet Name="EMPLOYEES" EntityType="Self.EMPLOYEES" />
+    <EntitySet Name="PAYMENT_METHOD" EntityType="Self.PAYMENT_METHOD" />
+    <EntitySet Name="PRODUCT" EntityType="Self.PRODUCT" />
+    <EntitySet Name="PROVIDER" EntityType="Self.PROVIDER" />
+    <EntitySet Name="TRANSACTION_DETAIL" EntityType="Self.TRANSACTION_DETAIL" />
+    <EntitySet Name="TRANSACTION_PAYMENT_DETAIL" EntityType="Self.TRANSACTION_PAYMENT_DETAIL" />
+    <EntitySet Name="TRANSACTION_SALE" EntityType="Self.TRANSACTION_SALE" />
+    <AssociationSet Name="FK__TRANSACTI__ID_CL__35BCFE0A" Association="Self.FK__TRANSACTI__ID_CL__35BCFE0A">
+      <End Role="CLIENT" EntitySet="CLIENT" />
+      <End Role="TRANSACTION_SALE" EntitySet="TRANSACTION_SALE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TRANSACTI__ID_EM__37A5467C" Association="Self.FK__TRANSACTI__ID_EM__37A5467C">
+      <End Role="EMPLOYEES" EntitySet="EMPLOYEES" />
+      <End Role="TRANSACTION_SALE" EntitySet="TRANSACTION_SALE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TRANSACTI__ID_PA__34C8D9D1" Association="Self.FK__TRANSACTI__ID_PA__34C8D9D1">
+      <End Role="PAYMENT_METHOD" EntitySet="PAYMENT_METHOD" />
+      <End Role="TRANSACTION_PAYMENT_DETAIL" EntitySet="TRANSACTION_PAYMENT_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PRODUCT__ID_PROV__36B12243" Association="Self.FK__PRODUCT__ID_PROV__36B12243">
+      <End Role="PROVIDER" EntitySet="PROVIDER" />
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TRANSACTI__ID_PR__31EC6D26" Association="Self.FK__TRANSACTI__ID_PR__31EC6D26">
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+      <End Role="TRANSACTION_DETAIL" EntitySet="TRANSACTION_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TRANSACTI__ID_TR__32E0915F" Association="Self.FK__TRANSACTI__ID_TR__32E0915F">
+      <End Role="TRANSACTION_SALE" EntitySet="TRANSACTION_SALE" />
+      <End Role="TRANSACTION_DETAIL" EntitySet="TRANSACTION_DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TRANSACTI__ID_TR__33D4B598" Association="Self.FK__TRANSACTI__ID_TR__33D4B598">
+      <End Role="TRANSACTION_SALE" EntitySet="TRANSACTION_SALE" />
+      <End Role="TRANSACTION_PAYMENT_DETAIL" EntitySet="TRANSACTION_PAYMENT_DETAIL" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
